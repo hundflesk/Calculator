@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace Miniräknare
+namespace Calc
 {
     public partial class Miniräknare : Form
     {
@@ -95,7 +95,7 @@ namespace Miniräknare
             }
         }
 
-        private void buttonKabeb_Click(object sender, EventArgs e)
+        private void ButtonKabeb_Click(object sender, EventArgs e)
         {
             Svar.Text = "Kabeb Kabeb Kabeb Kabeb Kabeb Kabeb";
 
@@ -105,7 +105,7 @@ namespace Miniräknare
             buttonLikamed.Enabled = false;
         }
 
-        private void buttonSiffra_Click(object sender, EventArgs e)
+        private void ButtonSiffra_Click(object sender, EventArgs e)
         { //anropas om man trycker ner en sifferknapp. används för att skriva ut siffror
 
             if (trycktPI == false) //kollar om användaren har tryckt PI,
@@ -137,10 +137,11 @@ namespace Miniräknare
                     trycktSiffra = true; //blir true för man tryckt ner en siffra som inte är 0
                 }
                 FixLabel();
+                Focus();
             }
         }
 
-        private void buttonPi_Click(object sender, EventArgs e)
+        private void ButtonPi_Click(object sender, EventArgs e)
         { //anropas när man trycker på pi-tecknet. används för att använda pi i beräkningen
 
             if (trycktSiffra == false && trycktNoll == false && trycktKomma == false)
@@ -162,7 +163,7 @@ namespace Miniräknare
             }
         }
 
-        private void buttonKomma_Click(object sender, EventArgs e)
+        private void ButtonKomma_Click(object sender, EventArgs e)
         { //anropas när man trycker '.' (punkt-tecken). används för att skriva decimaltal
 
             if (trycktKomma == false && trycktPI == false)
@@ -180,7 +181,7 @@ namespace Miniräknare
             //man kan alltså börja talet med att skriva "." t.ex .425 för det betyder samma som 0.425
         }
 
-        private void buttonNegative_Click(object sender, EventArgs e)
+        private void ButtonNegative_Click(object sender, EventArgs e)
         { //anropas när man trycker på '+/-'. används för att skriva ett negativt tal
 
             if (trycktSiffra == false
@@ -203,7 +204,7 @@ namespace Miniräknare
             }
         }
 
-        private void buttonSquareRoot_Click(object sender, EventArgs e)
+        private void ButtonSquareRoot_Click(object sender, EventArgs e)
         { //anropas när man trycker på sqrt-knappen. används för att dra kvadratroten ur ett tal
 
             if (trycktSiffra == false && trycktNoll == false && trycktKomma == false && trycktSqrt == false)
@@ -224,7 +225,7 @@ namespace Miniräknare
             }
         }
 
-        private void buttonOperator_Click(object sender, EventArgs e)
+        private void ButtonOperator_Click(object sender, EventArgs e)
         { //anropas när man trycker på +, -, x, / eller ^. används som räknesätt
 
             if (trycktSiffra == true || trycktNoll == true)
@@ -241,7 +242,7 @@ namespace Miniräknare
                     // för att mitt program inte kan upphöja ett tal flera gånger som t.ex 2^4^3^6
 
                     Svar.Text += button.Text; //skriver ut ^
-                    återställBools(); //anropar en funktion som jag förklarar vad den gör nedan
+                    ÅterställBools(); //anropar en funktion som jag förklarar vad den gör nedan
                     trycktUpphöjt = true; //blir true eftersom man tryckt upphöjt
                 }
                 else if (button.Text != buttonUpphöjt.Text)
@@ -250,12 +251,12 @@ namespace Miniräknare
                     Svar.Text += (" " + button.Text + " "); // skriver ut räknesättet,
                     //två mellanrum görs bredvid räkneoperatorn för att skilja på tal och räkneoperationer
 
-                    återställBools(); //anropar en funktion som jag förklarar nedan
+                    ÅterställBools(); //anropar en funktion som jag förklarar nedan
                 }
             }
         }
 
-        private void buttonNollställ_Click(object sender, EventArgs e)
+        private void ButtonNollställ_Click(object sender, EventArgs e)
         { //anropas när man trycker på knappen 'Clear'. används för att ta bort det som skrivits och börja om
 
             Svar.Clear(); //tar bort det som står i rutan
@@ -265,10 +266,10 @@ namespace Miniräknare
             Label.Text = null; //tar bort felmeddelandet, man vill bara att det ska synnas efter ett fel
             //och att det ska tas bort när man klickar 'Clear'
 
-            återställBools(); //anropar en funktion jag förklarar nedan
+            ÅterställBools(); //anropar en funktion jag förklarar nedan
         }
 
-        private void buttonLikamed_Click(object sender, EventArgs e)
+        private void ButtonLikamed_Click(object sender, EventArgs e)
         { //anropas när man trycker på =. används när man vill få svaret till sitt uttryck
 
             FixLabel();
@@ -306,7 +307,7 @@ namespace Miniräknare
             Label.Font = new Font("Calibri Light", 13);
         }
 
-        private void återställBools()
+        private void ÅterställBools()
         { //anropas av metoderna 'buttonOperator_Click' och 'buttonNollställ_Click'. 
             //används för att kunna mata in tal efter man har skrivit ut ett räknetecken (operator) eller tryckt 'Clear'
             //
@@ -377,7 +378,7 @@ namespace Miniräknare
                     {
                         char[] potens = string.Join(string.Empty, talAttUndersökas.Split()).ToCharArray();
 
-                        talet = potensTal(potens);
+                        talet = PotensTal(potens);
                     }
                     else
                         talet = SquareRootNumExtract(talAttUndersökas);
@@ -386,7 +387,7 @@ namespace Miniräknare
             return talet;
         }
 
-        private double potensTal(char[] potensen)
+        private double PotensTal(char[] potensen)
         {
             double detUpphöjdaTalet;
 
@@ -427,7 +428,7 @@ namespace Miniräknare
                 tal = SquareRootNumExtract(potensNummerAttUndersöka);
 
             else if (potensNummerAttUndersöka.Contains(buttonUpphöjt.Text))
-                tal = potensTal(string.Join(string.Empty, potensNummerAttUndersöka.Split()).ToCharArray());
+                tal = PotensTal(string.Join(string.Empty, potensNummerAttUndersöka.Split()).ToCharArray());
 
             else
                 tal = double.Parse(potensNummerAttUndersöka);

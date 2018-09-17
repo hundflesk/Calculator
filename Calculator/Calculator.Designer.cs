@@ -1,4 +1,4 @@
-﻿namespace Miniräknare
+﻿namespace Calc
 {
     partial class Miniräknare
     {
@@ -65,7 +65,7 @@
             this.buttonLikamed.TabStop = false;
             this.buttonLikamed.Text = "=";
             this.buttonLikamed.UseVisualStyleBackColor = true;
-            this.buttonLikamed.Click += new System.EventHandler(this.buttonLikamed_Click);
+            this.buttonLikamed.Click += new System.EventHandler(this.ButtonLikamed_Click);
             // 
             // buttonClear
             // 
@@ -78,7 +78,7 @@
             this.buttonClear.TabStop = false;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonNollställ_Click);
+            this.buttonClear.Click += new System.EventHandler(this.ButtonNollställ_Click);
             // 
             // Svar
             // 
@@ -106,7 +106,7 @@
             this.buttonDivison.TabStop = false;
             this.buttonDivison.Text = "÷";
             this.buttonDivison.UseVisualStyleBackColor = true;
-            this.buttonDivison.Click += new System.EventHandler(this.buttonOperator_Click);
+            this.buttonDivison.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonMultiplikation
             // 
@@ -119,7 +119,7 @@
             this.buttonMultiplikation.TabStop = false;
             this.buttonMultiplikation.Text = "x";
             this.buttonMultiplikation.UseVisualStyleBackColor = true;
-            this.buttonMultiplikation.Click += new System.EventHandler(this.buttonOperator_Click);
+            this.buttonMultiplikation.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonMinus
             // 
@@ -132,7 +132,7 @@
             this.buttonMinus.TabStop = false;
             this.buttonMinus.Text = "-";
             this.buttonMinus.UseVisualStyleBackColor = true;
-            this.buttonMinus.Click += new System.EventHandler(this.buttonOperator_Click);
+            this.buttonMinus.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonPlus
             // 
@@ -145,7 +145,7 @@
             this.buttonPlus.TabStop = false;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = true;
-            this.buttonPlus.Click += new System.EventHandler(this.buttonOperator_Click);
+            this.buttonPlus.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonKomma
             // 
@@ -158,7 +158,7 @@
             this.buttonKomma.TabStop = false;
             this.buttonKomma.Text = ",";
             this.buttonKomma.UseVisualStyleBackColor = true;
-            this.buttonKomma.Click += new System.EventHandler(this.buttonKomma_Click);
+            this.buttonKomma.Click += new System.EventHandler(this.ButtonKomma_Click);
             // 
             // buttonNegativ
             // 
@@ -171,7 +171,7 @@
             this.buttonNegativ.TabStop = false;
             this.buttonNegativ.Text = "+";
             this.buttonNegativ.UseVisualStyleBackColor = true;
-            this.buttonNegativ.Click += new System.EventHandler(this.buttonNegative_Click);
+            this.buttonNegativ.Click += new System.EventHandler(this.ButtonNegative_Click);
             // 
             // button0
             // 
@@ -184,7 +184,7 @@
             this.button0.TabStop = false;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
-            this.button0.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button0.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button9
             // 
@@ -197,7 +197,7 @@
             this.button9.TabStop = false;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button9.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button8
             // 
@@ -210,7 +210,7 @@
             this.button8.TabStop = false;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button8.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button7
             // 
@@ -223,7 +223,7 @@
             this.button7.TabStop = false;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button7.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button6
             // 
@@ -236,7 +236,7 @@
             this.button6.TabStop = false;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button6.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button5
             // 
@@ -249,7 +249,7 @@
             this.button5.TabStop = false;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button5.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button4
             // 
@@ -262,7 +262,7 @@
             this.button4.TabStop = false;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button4.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button3
             // 
@@ -275,7 +275,7 @@
             this.button3.TabStop = false;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button3.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button2
             // 
@@ -288,7 +288,7 @@
             this.button2.TabStop = false;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button2.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // button1
             // 
@@ -301,7 +301,7 @@
             this.button1.TabStop = false;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonSiffra_Click);
+            this.button1.Click += new System.EventHandler(this.ButtonSiffra_Click);
             // 
             // buttonUpphöjt
             // 
@@ -314,7 +314,7 @@
             this.buttonUpphöjt.TabStop = false;
             this.buttonUpphöjt.Text = "^";
             this.buttonUpphöjt.UseVisualStyleBackColor = true;
-            this.buttonUpphöjt.Click += new System.EventHandler(this.buttonOperator_Click);
+            this.buttonUpphöjt.Click += new System.EventHandler(this.ButtonOperator_Click);
             // 
             // buttonPi
             // 
@@ -329,11 +329,11 @@
             this.buttonPi.Text = "𝜋";
             this.buttonPi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonPi.UseVisualStyleBackColor = true;
-            this.buttonPi.Click += new System.EventHandler(this.buttonPi_Click);
+            this.buttonPi.Click += new System.EventHandler(this.ButtonPi_Click);
             // 
             // buttonSqrt
             // 
-            this.buttonSqrt.Font = new System.Drawing.Font("Open Sans Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter);
+            this.buttonSqrt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter);
             this.buttonSqrt.Location = new System.Drawing.Point(277, 246);
             this.buttonSqrt.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSqrt.Name = "buttonSqrt";
@@ -342,7 +342,7 @@
             this.buttonSqrt.TabStop = false;
             this.buttonSqrt.Text = "√";
             this.buttonSqrt.UseVisualStyleBackColor = true;
-            this.buttonSqrt.Click += new System.EventHandler(this.buttonSquareRoot_Click);
+            this.buttonSqrt.Click += new System.EventHandler(this.ButtonSquareRoot_Click);
             // 
             // Label
             // 
@@ -367,10 +367,11 @@
             this.buttonKabeb.TabStop = false;
             this.buttonKabeb.Text = "Kabeb";
             this.buttonKabeb.UseVisualStyleBackColor = true;
-            this.buttonKabeb.Click += new System.EventHandler(this.buttonKabeb_Click);
+            this.buttonKabeb.Click += new System.EventHandler(this.ButtonKabeb_Click);
             // 
             // Miniräknare
             // 
+            this.AccessibleName = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 551);
@@ -400,6 +401,7 @@
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Miniräknare";

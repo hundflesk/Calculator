@@ -13,7 +13,7 @@ namespace Calculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Miniräknare.Miniräknare());
+            Application.Run(new Calc.Miniräknare());
         }
     }
 }

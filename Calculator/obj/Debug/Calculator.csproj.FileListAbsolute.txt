@@ -8,3 +8,13 @@ C:\Users\elias\source\repos\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\elias\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
 C:\Users\elias\source\repos\Calculator\Calculator\obj\Debug\Miniräknare.Miniräknare.resources
 C:\Users\elias\source\repos\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Elias Persson\source\repos\Calculator\Calculator\obj\Debug\Calc.Miniräknare.resources
