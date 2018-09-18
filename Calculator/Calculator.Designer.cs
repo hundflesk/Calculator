@@ -150,7 +150,7 @@
             // buttonKomma
             // 
             this.buttonKomma.Font = new System.Drawing.Font("Yu Gothic UI Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter);
-            this.buttonKomma.Location = new System.Drawing.Point(277, 327);
+            this.buttonKomma.Location = new System.Drawing.Point(277, 409);
             this.buttonKomma.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKomma.Name = "buttonKomma";
             this.buttonKomma.Size = new System.Drawing.Size(80, 74);
@@ -163,7 +163,7 @@
             // buttonNegativ
             // 
             this.buttonNegativ.Font = new System.Drawing.Font("Yu Gothic", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Millimeter);
-            this.buttonNegativ.Location = new System.Drawing.Point(277, 409);
+            this.buttonNegativ.Location = new System.Drawing.Point(277, 327);
             this.buttonNegativ.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNegativ.Name = "buttonNegativ";
             this.buttonNegativ.Size = new System.Drawing.Size(80, 74);
