@@ -97,9 +97,11 @@ namespace Calc
 
         private void ButtonKabeb_Click(object sender, EventArgs e)
         {
+            Label.Focus();
+
             Svar.Text = "Kabeb Kabeb Kabeb Kabeb Kabeb Kabeb";
 
-            FixLabel();
+            FixaLabel();
             Label.Text = "Denna knapp har ingen funktion just nu.\nTryck 'Clear' för att rensa den här skiten...";
 
             buttonLikamed.Enabled = false;
@@ -107,6 +109,8 @@ namespace Calc
 
         private void ButtonSiffra_Click(object sender, EventArgs e)
         { //anropas om man trycker ner en sifferknapp. används för att skriva ut siffror
+
+            Label.Focus();
 
             if (trycktPI == false) //kollar om användaren har tryckt PI,
             { //man inte kan lägga till siffror på PI för då blir det inte PI längre
@@ -119,38 +123,38 @@ namespace Calc
 
                     if (trycktNoll == false || trycktSiffra == true || trycktKomma == true)
                     { //man får skriva noll om man något av följande krav uppfylls:
-                        // 1. man inte har tryckt 0 tidigare i samma tal
-                        // 2. man har redan tryckt en siffra som inte är 0, för att skriva t.ex 1000
-                        // 3. man har tryckt komma, för att skriva typ 4.000012
+                      //1. man inte har tryckt 0 tidigare i samma tal
+                      //2. man har redan tryckt en siffra som inte är 0, för att skriva t.ex 1000
+                      //3. man har tryckt komma, för att skriva typ 4.000012
 
                         Svar.Text += button.Text; //skriver ut 0:an
                         trycktNoll = true; //blir true eftersom man tryckt 0
                     }
                 }
                 else if (trycktNoll == false || trycktSiffra == true || trycktKomma == true)
-                { // om sifferknappen man trycker på inte är 0, skrivs följande om:
-                    // 1. man inte har tryckt 0 förr, för att inte skriva typ 00042
-                    // 2. man redan tryckt en siffra som inte är 0, för att skriva t.ex 1006
-                    // 3. man har tryckt kommatecknet
+                { //om sifferknappen man trycker på inte är 0, skrivs följande om:
+                  //1. man inte har tryckt 0 förr, för att inte skriva typ 00042
+                  //2. man redan tryckt en siffra som inte är 0, för att skriva t.ex 1006
+                  //3. man har tryckt kommatecknet
 
                     Svar.Text += button.Text; //skriver ut siffran som står på knappen
                     trycktSiffra = true; //blir true för man tryckt ner en siffra som inte är 0
                 }
-                FixLabel();
-                Focus();
             }
         }
 
         private void ButtonPi_Click(object sender, EventArgs e)
         { //anropas när man trycker på pi-tecknet. används för att använda pi i beräkningen
 
+            Label.Focus();
+
             if (trycktSiffra == false && trycktNoll == false && trycktKomma == false)
             { //man får skriva pi om följande krav uppfylls:
-                // 1. man får inte ha tryckt en siffra, man kan inte skriva t.ex 2pi,
-                //även om det betyder 2 * pi i matten så fattar inte min minräknare, skriv 2 * pi isåfall
-                // det gör också att man inte kan spamma pi flera gånger
-                // 2. samma som ovan, 0 är också en siffra
-                // 3. man får inte ha gjort ett komma-tecken, man kan inte skriva .3.1415... (.pi)
+              //1. man får inte ha tryckt en siffra, man kan inte skriva t.ex 2pi,
+              //även om det betyder 2 * pi i matten så fattar inte min minräknare, skriv 2 * pi isåfall
+              //det gör också att man inte kan spamma pi flera gånger
+              //2. samma som ovan, 0 är också en siffra
+              //3. man får inte ha gjort ett komma-tecken, man kan inte skriva .3.1415... (.pi)
 
                 Button button = (Button)sender;
                 Svar.Text += button.Text; //Skriver ut pi (tecknet), 
@@ -158,25 +162,23 @@ namespace Calc
 
                 trycktPI = true; //blir true eftersom man tryckt pi
                 trycktSiffra = true; //blir true eftersom pi innehåller åtminstone en siffra
-
-                FixLabel();
             }
         }
 
         private void ButtonKomma_Click(object sender, EventArgs e)
         { //anropas när man trycker '.' (punkt-tecken). används för att skriva decimaltal
 
+            Label.Focus();
+
             if (trycktKomma == false && trycktPI == false)
             { //kollar om man tryckt kommatecknet redan, 
-                //man kan inte skriva typ 3.22313.32 för man kan bara ha ett komma
-                // man får inte heller ha tryckt pi, för det är ett decimaltal och innehåller kommatecken redan
+              //man kan inte skriva typ 3.22313.32 för man kan bara ha ett komma
+              //man får inte heller ha tryckt pi, för det är ett decimaltal och innehåller kommatecken redan
 
                 Button button = (Button)sender;
                 Svar.Text += button.Text; //skriver ut kommatecknet
 
                 trycktKomma = true; //blir true eftersom man tryckt komma
-
-                FixLabel();
             }
             //man kan alltså börja talet med att skriva "." t.ex .425 för det betyder samma som 0.425
         }
@@ -184,28 +186,30 @@ namespace Calc
         private void ButtonNegative_Click(object sender, EventArgs e)
         { //anropas när man trycker på '+/-'. används för att skriva ett negativt tal
 
+            Label.Focus();
+
             if (trycktSiffra == false
                 && trycktNoll == false && trycktKomma == false
                 && trycktNegative == false && trycktSqrt == false)
             { //man kan skriva ut ett minustecken för att göra ett negativt tal om följande krav uppfylls:
-                // 1. man får inte ha skrivit ut en siffra redan, man markerar ett negativt tal genom att
-                // sätta minustecknet direkt framför talet, ska man subrahera två tal så finns en annan knapp för det
-                // 2. 0 är också en siffra
-                // 3. man får inte ha tryckt komma, eftersom man kan inte ha positiva heltal med negativa decimaltal
-                // hela talet måste vara negativt isåfall
-                // 3. man får inte ha tryckt knappen förr, för att inte spamma minustecken
-                // 4. man får inte ha tryckt på knappen för att dra kvadratroten ur ett tal,
-                // man kan ju inte dra roten ur negativa tal
+              // 1. man får inte ha skrivit ut en siffra redan, man markerar ett negativt tal genom att
+              // sätta minustecknet direkt framför talet, ska man subrahera två tal så finns en annan knapp för det
+              // 2. 0 är också en siffra
+              // 3. man får inte ha tryckt komma, eftersom man kan inte ha positiva heltal med negativa decimaltal
+              // hela talet måste vara negativt isåfall
+              // 3. man får inte ha tryckt knappen förr, för att inte spamma minustecken
+              // 4. man får inte ha tryckt på knappen för att dra kvadratroten ur ett tal,
+              // man kan ju inte dra roten ur negativa tal
 
                 Svar.Text += buttonMinus.Text; //skriver ut minustecknet
                 trycktNegative = true; //blir true eftersom man har markerat att man ska skriva ett negativt tal
-
-                FixLabel();
             }
         }
 
         private void ButtonSquareRoot_Click(object sender, EventArgs e)
         { //anropas när man trycker på sqrt-knappen. används för att dra kvadratroten ur ett tal
+
+            Label.Focus();
 
             if (trycktSiffra == false && trycktNoll == false && trycktKomma == false && trycktSqrt == false)
             { //man kan dra roten ur ett tal om följande krav uppfylls:
@@ -220,13 +224,13 @@ namespace Calc
                 // vilket tal man vill dra roten ur
 
                 trycktSqrt = true; //blir true eftersom man ska dra roten ur ett tal
-
-                FixLabel();
             }
         }
 
         private void ButtonOperator_Click(object sender, EventArgs e)
         { //anropas när man trycker på +, -, x, / eller ^. används som räknesätt
+
+            Label.Focus();
 
             if (trycktSiffra == true || trycktNoll == true)
             { //man får skriva ut ett räknetecken om följande krav uppfylls:
@@ -259,6 +263,8 @@ namespace Calc
         private void ButtonNollställ_Click(object sender, EventArgs e)
         { //anropas när man trycker på knappen 'Clear'. används för att ta bort det som skrivits och börja om
 
+            Label.Focus();
+
             Svar.Clear(); //tar bort det som står i rutan
             buttonLikamed.Enabled = true; //gör att man kan anropa en funktion jag förklarar nedan (efter den här)
 
@@ -272,20 +278,28 @@ namespace Calc
         private void ButtonLikamed_Click(object sender, EventArgs e)
         { //anropas när man trycker på =. används när man vill få svaret till sitt uttryck
 
-            FixLabel();
+            Label.Focus();
+
             //nedanstående villkor avgör om det uttryck som användaren har matat in är acceptabelt för beräkning
             if (trycktSiffra == true)
             { //uttrycket kan beräknas om det slutar på ett tal, alltså kan uttrycket inte sluta
-                //med något av räknetecknen (+, -, x, /, sqrt(  eller ^.
+              //med något av räknetecknen: +, -, x, /, sqrt(  eller ^.
 
                 uttryck = Svar.Text.Split(); //lagrar det matematiska uttrycket som användaren matade in i ett fält
                 //som heter 'uttryck', deklarerades i början av koden
                 Uträkning(uttryck);
 
+                //ifall uträkningen blir fel eller svaret blir för stort, körs denna kod
                 if (!Svar.Text.Any(chr => Char.IsDigit(chr)))
                 {
+                    FixaLabel();
+
+                    //om svaret blir för stort kommer "öändlighetstecknet" att skrivas (den liggande 8:an).
+                    //detta händer för att datatypen "double" kan inte lagra tal som t.ex 9^99999.
                     if (Svar.Text.Count() == 1)
                         Label.Text = "Error! Svaret blir för stort.\nTryck 'Clear' för att fortsätta...";
+                    //om svaret inte är för stort, betyder det att det matematiska uttrycket är orealistisk.
+                    //det blir helt enkelt fel i beräkningen och tre tecken kommer skrivas ut => (¤¤¤).
                     else
                         Label.Text = "Error! Svaret blir fel.\nTryck 'Clear' för att fortsätta...";
 
@@ -294,6 +308,8 @@ namespace Calc
             }
             else
             {
+                FixaLabel();
+
                 Label.Text = "Error! Mata in ett uttryck som slutar på ett tal." +
                     "\nTryck 'Clear' för att fortsätta...";
 
@@ -301,18 +317,11 @@ namespace Calc
             }
         }
 
-        private void FixLabel()
-        {
-            Label.Text = null;
-            Label.Font = new Font("Calibri Light", 13);
-        }
-
         private void ÅterställBools()
         { //anropas av metoderna 'buttonOperator_Click' och 'buttonNollställ_Click'. 
-            //används för att kunna mata in tal efter man har skrivit ut ett räknetecken (operator) eller tryckt 'Clear'
-            //
+          //används för att kunna mata in tal efter man har skrivit ut ett räknetecken (operator) eller tryckt 'Clear'
 
-            //enkelt sagt: alla bool-variabler återställs till "default" för att mata in ett tal, som när man startade programmet
+          //enkelt sagt: alla bool-variabler återställs till "default" för att mata in ett tal, som när man startade programmet
 
             trycktSiffra = false;
             trycktNoll = false;
@@ -322,6 +331,12 @@ namespace Calc
             trycktNegative = false;
             trycktSqrt = false;
             trycktUpphöjt = false;
+        }
+
+        private void FixaLabel()
+        {
+            Label.Text = null;
+            Label.Font = new Font("Calibri Light", 13);
         }
 
         private void Uträkning(string[] uttryck)
