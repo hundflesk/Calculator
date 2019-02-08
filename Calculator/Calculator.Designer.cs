@@ -367,7 +367,7 @@
             this.buttonKabeb.TabStop = false;
             this.buttonKabeb.Text = "Kabeb";
             this.buttonKabeb.UseVisualStyleBackColor = true;
-            this.buttonKabeb.Click += new System.EventHandler(this.ButtonKabeb_Click);
+            this.buttonKabeb.Click += new System.EventHandler(this.ButtonRnd_Click);
             // 
             // Miniräknare
             // 

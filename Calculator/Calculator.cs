@@ -97,14 +97,14 @@ namespace Calc
             }
         }
 
-        private void ButtonKabeb_Click(object sender, EventArgs e)
+        private void ButtonRnd_Click(object sender, EventArgs e)
         {
             Label.Focus();
 
-            Svar.Text = "Kabeb Kabeb Kabeb Kabeb Kabeb Kabeb";
+            Svar.Text = "Vet inte vad det är för knapp";
 
             FixaLabel();
-            Label.Text = "Denna knapp har ingen funktion just nu.\nTryck 'Clear' för att rensa den här skiten...";
+            Label.Text = "Denna knapp har ingen funktion just nu.\nTryck 'Clear' för att ta bort...";
 
             buttonLikamed.Enabled = false;
         }
