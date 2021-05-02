@@ -365,7 +365,7 @@
             this.buttonKabeb.Size = new System.Drawing.Size(80, 74);
             this.buttonKabeb.TabIndex = 22;
             this.buttonKabeb.TabStop = false;
-            this.buttonKabeb.Text = "Kabeb";
+            this.buttonKabeb.Text = "(?)";
             this.buttonKabeb.UseVisualStyleBackColor = true;
             this.buttonKabeb.Click += new System.EventHandler(this.ButtonRnd_Click);
             // 
